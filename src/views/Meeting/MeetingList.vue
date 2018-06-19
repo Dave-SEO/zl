@@ -9,7 +9,7 @@
               Java大牛 带你从0到上线开发企业级电商项目
             </router-link>
             <div class="bottom">
-              <a href="javascript:void(0)">详情</a>
+              <a href="javascript:void(0)" @click="dialogTableVisible = true">详情</a>
               <span>管理员：admin </span>
             </div>
           </div>
@@ -39,13 +39,18 @@
             :total="50">
           </el-pagination>
         </div>
+        <el-dialog title="详情" width='386px' top='0' :visible.sync="dialogTableVisible">
+            Java大牛带你从0到上线开发企业级电商项目Java大牛带你从0到上线开发企业级电商项目Java大牛带你从0到上线开发企业级电商项目
+        </el-dialog>
     </div>
 </template>
 <script>
 import vheader from 'components/vheader'
 export default {
   data () {
-    return {}
+    return {
+      dialogTableVisible: false
+    }
   },
   components: {
     vheader
@@ -53,6 +58,40 @@ export default {
 }
 </script>
 <style lang='less' coped>
+.meetingList /deep/ .el-dialog__header{
+  text-align: center;
+  border-bottom: 1px solid #E6E6E6;
+  padding:0;
+  height: 38px;
+  line-height: 42px;
+  box-sizing: border-box;
+}
+.meetingList /deep/.el-dialog__headerbtn {
+  top:5px;
+}
+.meetingList /deep/.el-dialog__wrapper{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.meetingList /deep/ .el-dialog__body{
+  padding:20px 40px 40px 40px;
+  line-height: 18px;
+}
+.meetingList /deep/.el-pager li,.meetingList /deep/.el-pagination button:disabled,.el-pagination .btn-next, .meetingList /deep/.el-pagination .btn-prev{
+  background:inherit
+}
+.meetingList /deep/.btn-prev,.meetingList /deep/.btn-next{
+  width: 24px;
+  height: 24px;
+  border: 1px solid #D0D4E0;
+  box-sizing: border-box;
+  border-radius: 4px;
+  }
+ .meetingList /deep/ .el-pagination button, .el-pagination span:not([class*=suffix]){
+    min-width: 24px;
+    padding:0;
+  }
 .meetingList{
     .cardBox {
     display: flex;

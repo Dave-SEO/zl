@@ -53,13 +53,11 @@ module.exports = {
 
   build: {
     // Template for index.html
-    index: path.resolve(__dirname, '../dist/index.html'),
-
+    index: path.resolve(__dirname, 'D:/wamp64/www/zlz/resources/views/meeting/index.blade.php'),
     // Paths
-    assetsRoot: path.resolve(__dirname, '../dist'),
-    assetsSubDirectory: 'static',
-    assetsPublicPath: '/',
-
+    assetsRoot: path.resolve(__dirname, 'D:/wamp64/www/zlz/public'),
+    assetsSubDirectory: 'meeting',
+    assetsPublicPath: '/', 
     /**
      * Source Maps
      */

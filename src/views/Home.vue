@@ -7,10 +7,19 @@
                     <img src="../assets/images/nav_logo.png" alt="">
                 </div>
                 <div class="userCenter">
-                    <a href="javascript:;">
+                    <!-- <a href="javascript:;">
                         欢迎您,admin!
-                    </a>
-                     <i class="el-submenu__icon-arrow el-icon-arrow-down" style="color:#FF8893;top: 60%;right: 28px;"></i>
+                    </a> -->
+                    <el-dropdown trigger="click" placement='top-start' >
+                        <span class="el-dropdown-link">
+                            欢迎您admin！<i class="el-icon-arrow-down el-icon--right"></i>
+                        </span>
+                        <el-dropdown-menu slot="dropdown">
+                            <el-dropdown-item>个人中心</el-dropdown-item>
+                            <el-dropdown-item>安全退出</el-dropdown-item>
+                        </el-dropdown-menu>
+                    </el-dropdown>
+                     <!-- <i class="el-submenu__icon-arrow el-icon-arrow-down" style="color:#FF8893;top: 60%;right: 28px;"></i> -->
                 </div>
                 <el-menu  @open="handleOpen"  @close="handleClose" :router='true' default-active='/MeetingList' :unique-opened='true' text-color='#FF8893'  active-text-color='#ffff'>
                      <el-menu-item index="/MeetingList">
@@ -61,6 +70,22 @@ export default {
 .pages /deep/ .el-menu-item:focus, .pages /deep/ .el-menu-item:hover,.pages /deep/ .el-submenu__title:hover {
     outline: 0;
     background-color: #690C14;
+}
+.pages /deep/.el-dropdown{
+    width: 146px;
+    height: 26px;
+    line-height: 26px;
+    color: #fff;
+    border-radius: 2px;
+}
+.pages /deep/.el-dropdown:hover{
+    font-size: 14px;
+    color: #FF8893;
+    cursor: pointer;
+    background: #690C14;
+}
+.pages /deep/.el-dropdown-menu{
+    left:43px !important;
 }
 .leftView{
     background: url('../assets/images/nav_bg.png') no-repeat;
