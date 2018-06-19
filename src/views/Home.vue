@@ -7,19 +7,18 @@
                     <img src="../assets/images/nav_logo.png" alt="">
                 </div>
                 <div class="userCenter">
-                    <img src="../assets/images/icon-header.png" alt="">
-                    <h3>欢迎您,dave</h3>
+                    <a href="javascript:;">
+                        欢迎您,admin!
+                    </a>
+                     <i class="el-submenu__icon-arrow el-icon-arrow-down" style="color:#FF8893;top: 60%;right: 28px;"></i>
                 </div>
-                <el-menu  @open="handleOpen"  @close="handleClose" :router='true'  :unique-opened='true' text-color='#ffff'  active-text-color='#64B0FF'  background-color="#0869CE" >
-                    <el-submenu index="1">
-                        <template slot="title"><i class="el-icon-message"></i>会议列表</template>
-                        <el-menu-item-group>
-                            <el-menu-item index="/MeetingAll" >全部会议</el-menu-item>
-                            <el-menu-item index="/MeetingMy">我的会议</el-menu-item>
-                        </el-menu-item-group>
-                    </el-submenu>
+                <el-menu  @open="handleOpen"  @close="handleClose" :router='true' default-active='/MeetingList' :unique-opened='true' text-color='#FF8893'  active-text-color='#ffff'>
+                     <el-menu-item index="/MeetingList">
+                        <i class="icon meeting_norma meeting_active"></i>
+                        <span slot="title">例行会议</span>
+                    </el-menu-item>
                     <el-menu-item index="/MeetingCreate">
-                        <i class="el-icon-menu"></i>
+                        <i class="icon nav_icon_mg_normal nav_icon_mg_active"></i>
                         <span slot="title">创建会议</span>
                     </el-menu-item>
                 </el-menu>
@@ -52,7 +51,17 @@ export default {
 .pages /deep/ .section {
   height: 100%;
 }
-.pages /deep/.el-menu{border:none;}
+.pages /deep/ .el-submenu .el-submenu__icon-arrow{
+    display: none;
+}
+.pages /deep/.el-menu{border:none;background: none;text-align: center;font-size: 16px;}
+.pages /deep/ .el-menu-item{
+    font-size: 16px;
+}
+.pages /deep/ .el-menu-item:focus, .pages /deep/ .el-menu-item:hover,.pages /deep/ .el-submenu__title:hover {
+    outline: 0;
+    background-color: #690C14;
+}
 .leftView{
     background: url('../assets/images/nav_bg.png') no-repeat;
     background-size: 100% 100%;
@@ -66,18 +75,46 @@ export default {
     padding-left:30px;
 }
 .pages{
-    background: #eff3f5;
+    background:#F5F2EF;
     height: 100%;
+    .leftView{
+          .is-active{
+               .icon.meeting_active{
+                   background: url('../assets/images/meeting_active.png') no-repeat !important;
+                   background-size: 100% 100%;
+               }
+                .icon.nav_icon_mg_active{
+                   background: url('../assets/images/nav_icon_mg_active.png') no-repeat !important;
+                   background-size: 100% 100%;
+               }
+           }
+        .icon{
+           display: inline-block;
+           width: 20px;
+           height: 18px;
+           &.meeting_norma{
+               background: url('../assets/images/meeting_norma.png') no-repeat;
+               background-size: 100% 100%;
+           }
+            &.nav_icon_mg_normal{
+               background: url('../assets/images/nav_icon_mg_normal.png') no-repeat;
+               background-size: 100% 100%;
+           }
+        }
+    }
     .logo{
-      margin:20px 0 0 20px;
+      margin-top:22px;
+      text-align: center;
     }
     .userCenter{
         text-align: center;
+        position: relative;
         margin-top:42px;
-        h3{
+        margin-bottom: 15px;
+        a{
             margin-top:4px;
             font-size: 14px;
-            color: #92C8FF;
+            color: #FF8893;
             letter-spacing: -0.1px;
             text-align: center;
         }

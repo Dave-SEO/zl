@@ -17,14 +17,9 @@ export default new Router({
       component: resolve => require(['views/Home'], resolve),
       children: [
         {
-          path: '/MeetingAll',
-          name: 'MeetingAll',
-          component: resolve => require(['views/MeetingList/MeetingAll'], resolve)
-        },
-        {
-          path: '/MeetingMy',
-          name: 'MeetingMy',
-          component: resolve => require(['views/MeetingList/MeetingMy'], resolve)
+          path: '/MeetingList',
+          name: 'MeetingList',
+          component: resolve => require(['views/Meeting/MeetingList'], resolve)
         },
         {
           path: '/MeetingCreate',
@@ -32,6 +27,11 @@ export default new Router({
           component: resolve => require(['views/MeetingCreate/MeetingCreate'], resolve)
         }
       ]
+    },
+    {
+      path: '/addMeeting/:id',
+      name: '/addMeeting',
+      component: resolve => require(['views/Meeting/AddMeeting'], resolve)
     }
     // {
     //   path: '/demo',

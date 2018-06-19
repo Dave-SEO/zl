@@ -6,7 +6,7 @@
     </div>
 </template>
 <script>
-import vheader from 'components/header'
+import vheader from 'components/vheader'
 export default {
   data () {
     return {}

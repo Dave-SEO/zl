@@ -13,7 +13,7 @@ export default {
   },
   components: {},
   computed: {},
-  mounted: {},
+  mounted () {},
   methods: {}
 }
 </script>
@@ -21,14 +21,14 @@ export default {
     .header{
         width: 100%;
         height: 60px;
-        border-bottom: 1px solid #ccc;
+        border-bottom: 1px solid #dcdcdc;
         .title{
             display: inline-block;
             height: 100%;
             font-size: 20px;
             color: #3D3D3D;
             box-sizing: border-box;
-            border-bottom:3px solid #ccc;
+            border-bottom:3px solid #dcdcdc;
             line-height: 80px;
             min-width: 84px;
         }
