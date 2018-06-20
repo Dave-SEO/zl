@@ -15,7 +15,9 @@
                             欢迎您admin！<i class="el-icon-arrow-down el-icon--right"></i>
                         </span>
                         <el-dropdown-menu slot="dropdown">
-                            <el-dropdown-item>个人中心</el-dropdown-item>
+                            <router-link to="/UserCenter">
+                                <el-dropdown-item>个人中心</el-dropdown-item>
+                            </router-link>
                             <el-dropdown-item>安全退出</el-dropdown-item>
                         </el-dropdown-menu>
                     </el-dropdown>
@@ -28,7 +30,7 @@
                     </el-menu-item>
                     <el-menu-item index="/MeetingCreate">
                         <i class="icon nav_icon_mg_normal nav_icon_mg_active"></i>
-                        <span slot="title">创建会议</span>
+                        <span slot="title">站点管理</span>
                     </el-menu-item>
                 </el-menu>
             </el-aside>
@@ -55,7 +57,7 @@ export default {
   }
 }
 </script>
-<style lang='less' coped>
+<style lang='less' >
 .pages /deep/ .container,
 .pages /deep/ .section {
   height: 100%;

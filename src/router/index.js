@@ -22,9 +22,9 @@ export default new Router({
           component: resolve => require(['views/Meeting/MeetingList'], resolve)
         },
         {
-          path: '/MeetingCreate',
-          name: 'MeetingCreate',
-          component: resolve => require(['views/MeetingCreate/MeetingCreate'], resolve)
+          path: '/UserCenter',
+          name: 'UserCenter',
+          component: resolve => require(['views/UserCenter/UserCenter'], resolve)
         }
       ]
     },

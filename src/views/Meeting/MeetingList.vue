@@ -109,7 +109,6 @@ export default {
       border-radius: 4px;
       margin: 16px 20px 0 0;
       .content {
-        cursor: pointer;
         color: #212121;
         font-size: 14px;
         display: flex;
@@ -119,6 +118,10 @@ export default {
         height: 108px;
         box-sizing: border-box;
         line-height: 22px;
+        &:hover{
+          cursor: pointer;
+          color: #129BED;
+        }
       }
       .bottom {
         display: flex;
